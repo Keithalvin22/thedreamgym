@@ -1,0 +1,6 @@
+candidate_list:
+    path: '/candidate'
+    defaults:
+      _controller: '\Drupal\candidate_list\controller\candidateList::page' 
+    requirements:
+      _permission: 'access content'

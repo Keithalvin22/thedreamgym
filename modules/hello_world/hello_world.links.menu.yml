@@ -1,0 +1,6 @@
+hello_world:
+  title: 'Hello world settings'
+  description: 'This is how it works in our world keith'
+  route_name: hello_world
+  parent: system.admin-config_development
+  weight: 100

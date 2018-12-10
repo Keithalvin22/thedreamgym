@@ -1,0 +1,59 @@
+<?php
+
+  function rsvplist_schema(){
+    $schema['rsvplist']=array(
+      'description'=> 'Store email , timestamp, nid and uid for an rsvp',
+      'fields' => array(
+        'id' => array(
+          'description' => 'the primary identifier for the record.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+      ),
+       'uid' =>array(
+          'description' => 'The {users}.uid that added this rsvp',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+      ),
+       'nid' =>array(
+          'description' => 'The {node} .nid for this rsvp',
+          'type' => 'varchar',
+          'length' => 64,
+          'not null' => FALSE,
+          'default' => 0,
+      ),
+       'mail' =>array(
+          'description' => 'User\'s email address.',
+          'type' => 'varchar',
+          'length' => 64,
+          'not null' => FALSE,
+          'default' => '',
+      ), 
+       'created' => array(
+          'description' => 'timestamp for when the rsvp was created.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+      ),
+       'primary key' => array('id'),
+          'indexes' => array(
+          'node' => array('nid'),
+          'node user' => array('nid', 'uid'),
+      ),
+);
+
+$schema['rsvplist_enabled'] = array(
+  'description'=> 'track weathe rsvp list is enable for a node.',
+    'fields' => array(
+      'nid' => array(
+      'description' => 'the {node} .nid that hassvp enabled.',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => 0,
+      ),
+   'primary key' => array('nid'),
+);
+
+return $schema;
+}

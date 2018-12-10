@@ -1,0 +1,15 @@
+<?php
+
+/**
+* implementing hook theme
+*/
+
+function candidate_list_theme($existing, $type, $theme, $path) {
+
+  return array(
+    'candidate_list' => array(
+        'variables' => array( 'items'=>array(), 'title'=>'')
+        )
+      );
+}
+

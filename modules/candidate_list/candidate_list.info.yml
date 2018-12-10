@@ -1,0 +1,5 @@
+name: candidate_list
+description: 'this module will display a list of candidate'
+type: module
+core: 8.x
+package: custom
